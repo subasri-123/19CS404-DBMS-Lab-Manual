@@ -104,124 +104,151 @@ CREATE TABLE Table_Name (
 ```
 
 **Question 1**
---
--- Paste Question 1 here
+![image](https://github.com/user-attachments/assets/7de5c4d0-a91d-4b48-99b7-34ba86219a76)
 
 ```sql
--- Paste your SQL code below for Question 1
+create table Customers(
+CustomerID INTEGER,
+Name TEXT,
+Email TEXT,
+JoinDate DATETIME);
 ```
 
 **Output:**
-
-![Output1](output.png)
+![image](https://github.com/user-attachments/assets/ee872218-c819-4131-9436-a8fa798fe93b)
 
 **Question 2**
 ---
--- Paste Question 2 here
+![image](https://github.com/user-attachments/assets/37ea9645-2f1f-41ea-a8c9-7deec7a01d7f)
 
-```sql
--- Paste your SQL code below for Question 2
-```
+
+INSERT INTO Products (ProductID, Price)
+VALUES (106, 10.00);
+INSERT INTO Products(ProductID, Name, Category, Price, Stock)
+VALUES(107,'Laptop','Electronics',999.99,50);
+INSERT INTO products(ProductID, Name, Category)
+VALUES(108,'Wireless Earbuds','Accessories');
 
 **Output:**
 
-![Output2](output.png)
+![image](https://github.com/user-attachments/assets/608ae1f9-7a0b-4388-8a86-131a7e959cca)
+
 
 **Question 3**
----
--- Paste Question 3 here
+![image](https://github.com/user-attachments/assets/3d0bfa90-b0d1-42f2-831b-7453d131b73d)
 
-```sql
--- Paste your SQL code below for Question 3
-```
+
+create table Members(
+MemberID INTEGER,
+MemberName TEXT,
+JoinDate DATE);
 
 **Output:**
 
-![Output3](output.png)
+![image](https://github.com/user-attachments/assets/907d4743-d926-42af-9952-f16008bce74c)
+
 
 **Question 4**
----
--- Paste Question 4 here
+![image](https://github.com/user-attachments/assets/3bcd65d7-9b9a-4149-9043-5a1cfd9d5930)
 
-```sql
--- Paste your SQL code below for Question 4
-```
+insert into Student_details(RollNo, Name,Gender,Subject,MARKS)
+values
+(202,'Ella King','F','Chemistry',87),
+
+(203,'James Bond','M','Literature',78);
+
 
 **Output:**
 
-![Output4](output.png)
+![image](https://github.com/user-attachments/assets/39c1986f-4947-4011-8c24-0ce740c064e0)
 
 **Question 5**
----
--- Paste Question 5 here
+![image](https://github.com/user-attachments/assets/23bbdeee-1f65-4ddf-933b-41f5604f822a)
 
-```sql
--- Paste your SQL code below for Question 5
-```
 
+ALTER TABLE  customers
+ADD column email TEXT;
 **Output:**
 
-![Output5](output.png)
+![image](https://github.com/user-attachments/assets/4a2ef0d1-c83c-4fa3-a976-bd05d81f116b)
+
 
 **Question 6**
----
--- Paste Question 6 here
+![image](https://github.com/user-attachments/assets/2aca926f-ed49-4be8-b2da-e29c6ce7d33f)
 
-```sql
--- Paste your SQL code below for Question 6
-```
+CREATE TABLE Shipments(
+ShipmentID INTEGER  primary key,
+ShipmentDate DATE,
+SupplierID INTEGER,
+OrderID INTEGER,
+foreign key (SupplierID) REFERENCES Suppliers(SupplierID),
+foreign key (OrderID) REFERENCES Orders(OrderID)
+
+);
 
 **Output:**
 
-![Output6](output.png)
+![image](https://github.com/user-attachments/assets/7b041728-4b16-4ed2-af93-b1499ecfff75)
+
 
 **Question 7**
----
--- Paste Question 7 here
+![image](https://github.com/user-attachments/assets/7f1d3d4b-8f08-471a-9924-edf166cf57c1)
 
-```sql
--- Paste your SQL code below for Question 7
-```
+create table Invoices(
+InvoiceID INTEGER primary key,
+InvoiceDate DATE,
+DueDate DATE,
+Amount REAL,
+CHECK (DueDate>InvoiceDate),
+CHECK (Amount>0)
+);
 
 **Output:**
 
-![Output7](output.png)
+![image](https://github.com/user-attachments/assets/70992c79-2872-45f1-a829-da9c15cfb296)
 
 **Question 8**
----
--- Paste Question 8 here
+![image](https://github.com/user-attachments/assets/2ce480f1-3f72-4634-9e63-f7cc879fa5b1)
 
-```sql
--- Paste your SQL code below for Question 8
-```
-
+create table orders(
+ord_id TEXT NOT NULL CHECK(LENGTH(ord_id)=4),
+item_id TEXTNOT NULL,
+ord_date DATE,
+ord_qty INTEGER,
+cost INTEGER,
+PRIMARY KEY (item_id,ord_date)
+);
 **Output:**
 
-![Output8](output.png)
+![image](https://github.com/user-attachments/assets/77606cfb-c48c-48ed-a3f0-0554d04e8a70)
+
 
 **Question 9**
----
--- Paste Question 9 here
 
-```sql
--- Paste your SQL code below for Question 9
-```
+![image](https://github.com/user-attachments/assets/c8f2d3fe-f6a3-4e21-8552-551eea75b427)
 
+INSERT INTO Customers(CustomerID,Name,Address)
+VALUES(304,'Peter Parker','Spider St');
 **Output:**
 
-![Output9](output.png)
+![image](https://github.com/user-attachments/assets/3120f0b0-dfae-4b55-9c1b-394fda2fd44b)
+
 
 **Question 10**
----
--- Paste Question 10 here
 
-```sql
--- Paste your SQL code below for Question 10
-```
+![image](https://github.com/user-attachments/assets/5777ff75-bcfe-4cfa-9798-1e86b9037f2d)
+
+
+ALTER TABLE Employees
+ADD COLUMN Date_of_joining Date;
+
+ALTER TABLE Employees
+RENAME COLUMN job_title TO Designation;
 
 **Output:**
 
-![Output10](output.png)
+
+![image](https://github.com/user-attachments/assets/bb2421e0-03f9-49e9-ae37-5b96683270eb)
 
 
 ## RESULT
