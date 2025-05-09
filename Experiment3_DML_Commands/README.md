@@ -46,124 +46,155 @@ Used to retrieve records from a table.
 SELECT column1, column2 FROM table_name WHERE condition;
 ```
 **Question 1**
---
--- Paste Question 1 here
 
-```sql
--- Paste your SQL code below for Question 1
-```
+
+![image](https://github.com/user-attachments/assets/7c15808a-0314-4c9c-89c0-e0360c12d203)
+
+update sales
+
+set sell_price=sell_price+3
+where product_id IN (SELECT product_id FROM products WHERE supplier_id=4);
 
 **Output:**
 
-![Output1](output.png)
+![image](https://github.com/user-attachments/assets/de6eda63-fec3-4e3b-b94c-e60d47e78f99)
+
 
 **Question 2**
----
--- Paste Question 2 here
 
-```sql
--- Paste your SQL code below for Question 2
-```
 
+![image](https://github.com/user-attachments/assets/71ae2470-749e-46e3-8617-44381491f82c)
+
+SELECT 
+    id,
+    value1,
+    CASE 
+       WHEN value1 % 2=0 THEN 'Even'
+       ELSE 'Odd'
+    END AS parity
+    
+FROM 
+    calculations;
+    
 **Output:**
 
-![Output2](output.png)
+![image](https://github.com/user-attachments/assets/47b97d68-5feb-4807-8e32-dbe136b9d172)
 
 **Question 3**
----
--- Paste Question 3 here
 
-```sql
--- Paste your SQL code below for Question 3
-```
+
+![image](https://github.com/user-attachments/assets/5e13ee56-235f-4712-81e7-692623fdf70f)
+
+SELECT DISTINCT city
+FROM customers;
 
 **Output:**
 
-![Output3](output.png)
+![image](https://github.com/user-attachments/assets/3a0428bb-a653-458c-9d1f-2b73ea8b2f57)
 
 **Question 4**
----
--- Paste Question 4 here
 
-```sql
--- Paste your SQL code below for Question 4
-```
+
+![image](https://github.com/user-attachments/assets/585ae3e5-b0b5-44a5-b096-2d560d839f7d)
+
+SELECT*
+FROM emp
+WHERE strftime('%Y',hiredate)='2022';
 
 **Output:**
 
-![Output4](output.png)
+![image](https://github.com/user-attachments/assets/488a8ee3-5b78-4562-b248-2bc9bec35f5a)
 
 **Question 5**
----
--- Paste Question 5 here
 
-```sql
--- Paste your SQL code below for Question 5
-```
 
+![image](https://github.com/user-attachments/assets/7fdc06d2-5319-43b2-b063-55a978f4c79d)
+
+SELECT
+    product_id,
+    discounted_price,
+    discount_percentage,
+    discounted_price / (1-discount_percentage) AS original_price
+FROM
+    products;
+    
 **Output:**
 
-![Output5](output.png)
+![image](https://github.com/user-attachments/assets/a2e879a0-67c6-41d9-9a37-ba26ea6f00b8)
 
 **Question 6**
----
--- Paste Question 6 here
 
-```sql
--- Paste your SQL code below for Question 6
-```
+
+![image](https://github.com/user-attachments/assets/28a650cf-d5d2-4ded-9799-c968514a648b)
+
+
+SELECT 
+    UPPER(FirstName) As FirstName,
+    UPPER(LastName) As LastName,
+    EmployeeID
+FROM
+    employees
+ORDER BY 
+    EmployeeID DESC;
 
 **Output:**
 
-![Output6](output.png)
+![image](https://github.com/user-attachments/assets/32867f52-c4b7-4079-a96e-2b492915e1f4)
 
 **Question 7**
----
--- Paste Question 7 here
 
-```sql
--- Paste your SQL code below for Question 7
-```
+
+![image](https://github.com/user-attachments/assets/e19ee9a7-6030-406e-b0c8-cea1f1231d02)
+
+
+UPDATE sales
+SET sell_price=sell_price*1.05
+WHERE product_id=15
+  AND sale_date='2023-01-31';
 
 **Output:**
 
-![Output7](output.png)
+![image](https://github.com/user-attachments/assets/0d7a6576-83c6-4707-a7b3-27e12cb81db9)
 
 **Question 8**
----
--- Paste Question 8 here
 
-```sql
--- Paste your SQL code below for Question 8
-```
+
+![image](https://github.com/user-attachments/assets/9ea937c2-10d9-4546-ac2d-ccee02010fc4)
+
+
+DELETE FROM surgeries
+WHERE surgery_id=3
+   OR surgeon_id=4;
 
 **Output:**
 
-![Output8](output.png)
+![image](https://github.com/user-attachments/assets/efc93422-c43b-4eaf-9247-d73b440e964c)
 
 **Question 9**
----
--- Paste Question 9 here
 
-```sql
--- Paste your SQL code below for Question 9
-```
+
+![image](https://github.com/user-attachments/assets/d5956ed6-e458-4ed7-8e9b-46bfe6108877)
+
+UPDATE Employees
+SET salary=salary*2
+WHERE department_id=20
+  AND job_id LIKE '%MAN';
 
 **Output:**
 
-![Output9](output.png)
+![image](https://github.com/user-attachments/assets/043a1d92-ad40-4763-916e-c640d5b17ac1)
 
 **Question 10**
----
--- Paste Question 10 here
 
-```sql
--- Paste your SQL code below for Question 10
-```
+
+![image](https://github.com/user-attachments/assets/bb722975-96d3-4dae-bb43-ffbfffb8347d)
+
+DELETE FROM Doctors
+WHERE doctor_id=1;
 
 **Output:**
 
-![Output10](output.png)
+![image](https://github.com/user-attachments/assets/dd953a63-7740-4191-8341-eb301f53ff0e)
 
 ## RESULT
 Thus, the SQL queries to implement DML commands have been executed successfully.
