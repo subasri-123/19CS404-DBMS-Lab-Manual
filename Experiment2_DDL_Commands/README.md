@@ -104,6 +104,8 @@ CREATE TABLE Table_Name (
 ```
 
 **Question 1**
+
+
 ![image](https://github.com/user-attachments/assets/7de5c4d0-a91d-4b48-99b7-34ba86219a76)
 
 ```sql
@@ -115,10 +117,13 @@ JoinDate DATETIME);
 ```
 
 **Output:**
+
+
 ![image](https://github.com/user-attachments/assets/ee872218-c819-4131-9436-a8fa798fe93b)
 
 **Question 2**
----
+
+
 ![image](https://github.com/user-attachments/assets/37ea9645-2f1f-41ea-a8c9-7deec7a01d7f)
 
 
@@ -131,10 +136,13 @@ VALUES(108,'Wireless Earbuds','Accessories');
 
 **Output:**
 
+
 ![image](https://github.com/user-attachments/assets/608ae1f9-7a0b-4388-8a86-131a7e959cca)
 
 
 **Question 3**
+
+
 ![image](https://github.com/user-attachments/assets/3d0bfa90-b0d1-42f2-831b-7453d131b73d)
 
 
@@ -145,10 +153,13 @@ JoinDate DATE);
 
 **Output:**
 
+
 ![image](https://github.com/user-attachments/assets/907d4743-d926-42af-9952-f16008bce74c)
 
 
 **Question 4**
+
+
 ![image](https://github.com/user-attachments/assets/3bcd65d7-9b9a-4149-9043-5a1cfd9d5930)
 
 insert into Student_details(RollNo, Name,Gender,Subject,MARKS)
@@ -162,18 +173,25 @@ values
 
 ![image](https://github.com/user-attachments/assets/39c1986f-4947-4011-8c24-0ce740c064e0)
 
+
 **Question 5**
+
+
 ![image](https://github.com/user-attachments/assets/23bbdeee-1f65-4ddf-933b-41f5604f822a)
 
 
 ALTER TABLE  customers
 ADD column email TEXT;
+
 **Output:**
 
 ![image](https://github.com/user-attachments/assets/4a2ef0d1-c83c-4fa3-a976-bd05d81f116b)
 
 
+
 **Question 6**
+
+
 ![image](https://github.com/user-attachments/assets/2aca926f-ed49-4be8-b2da-e29c6ce7d33f)
 
 CREATE TABLE Shipments(
@@ -192,6 +210,8 @@ foreign key (OrderID) REFERENCES Orders(OrderID)
 
 
 **Question 7**
+
+
 ![image](https://github.com/user-attachments/assets/7f1d3d4b-8f08-471a-9924-edf166cf57c1)
 
 create table Invoices(
@@ -207,7 +227,10 @@ CHECK (Amount>0)
 
 ![image](https://github.com/user-attachments/assets/70992c79-2872-45f1-a829-da9c15cfb296)
 
+
 **Question 8**
+
+
 ![image](https://github.com/user-attachments/assets/2ce480f1-3f72-4634-9e63-f7cc879fa5b1)
 
 create table orders(
@@ -218,7 +241,9 @@ ord_qty INTEGER,
 cost INTEGER,
 PRIMARY KEY (item_id,ord_date)
 );
+
 **Output:**
+
 
 ![image](https://github.com/user-attachments/assets/77606cfb-c48c-48ed-a3f0-0554d04e8a70)
 
@@ -229,6 +254,7 @@ PRIMARY KEY (item_id,ord_date)
 
 INSERT INTO Customers(CustomerID,Name,Address)
 VALUES(304,'Peter Parker','Spider St');
+
 **Output:**
 
 ![image](https://github.com/user-attachments/assets/3120f0b0-dfae-4b55-9c1b-394fda2fd44b)
