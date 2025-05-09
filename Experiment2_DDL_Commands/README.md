@@ -160,7 +160,7 @@ JoinDate DATE);
 **Question 4**
 
 
-![image](https://github.com/user-attachments/assets/3bcd65d7-9b9a-4149-9043-5a1cfd9d5930)
+![image](https://github.com/user-attachments/assets/d9e92aaa-d127-42a8-9d82-b57110dcb38e)
 
 insert into Student_details(RollNo, Name,Gender,Subject,MARKS)
 values
