@@ -45,28 +45,45 @@ Design a database for patient management, appointments, medical records, and bil
    - Why you chose the entities and relationships.
    - How you modeled prerequisites or billing.
 
-# ER Diagram Submission - Student Name
+# ER Diagram Submission - Subasri B
 
 ## Scenario Chosen:
-University / Hospital (choose one)
+Hospital
 
 ## ER Diagram:
-![ER Diagram](er_diagram.png)
+
+![image](https://github.com/user-attachments/assets/830e72b6-55e2-402a-bce7-591aefd207d9)
 
 ## Entities and Attributes:
-- Entity1: Attributes
-- Entity2: Attributes
-...
+Patient
+Attributes: Patient_id, Patient_name, DOB, Gender, Address
+
+Appointment
+Attributes: Token_no, Time
+
+Doctor
+Attributes: Doctor_id, Doctor_name, Phone_no
+
+Treatment
+Attributes: Diagnos, Medicine, Test_result
 
 ## Relationships and Constraints:
-- Relationship1 (Cardinality, Participation)
-- Relationship2 (Cardinality, Participation)
-...
+Books Between: Patient and Appointment
+Cardinality & Participation: Not explicitly mentioned (assumed many-to-many or one-to-many)
+
+Conducted by Between: Doctor and Appointment
+Cardinality & Participation: Not specified (likely one-to-many from diagram flow)
+
+Visit Between: Appointment and Treatment
+Cardinality & Participation: Not specified (seems one-to-one from the layout)
 
 ## Extension (Prerequisite / Billing):
-- Explain how you modeled prerequisites or billing.
+Not Prerequisite
 
 ## Design Choices:
-Brief explanation of why you chose certain entities, relationships, and assumptions
+The design captures the core hospital workflow using four main entities: Patient, Appointment, Doctor, and Treatment.
+Relationships like Books, Conducted by, and Visit logically link these entities.
+All attributes shown are atomic and suitable for normalization.
 
 ## RESULT
+The ER model represents a hospital database with four main entities—Patient, Doctor, Appointment, and Treatment—connected through three relationships: Books, Conducted by, and Visit. Each entity contains relevant attributes, and the model clearly outlines the flow of a hospital visit: a patient books an appointment, a doctor conducts it, and treatment follows. No billing or prerequisites are included in the diagram. The design is simple, logical, and aligns with real-world hospital processes as visually depicted.
