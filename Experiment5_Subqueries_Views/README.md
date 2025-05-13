@@ -37,124 +37,153 @@ DROP VIEW view_name;
 ```
 
 **Question 1**
---
--- Paste Question 1 here
 
-```sql
--- Paste your SQL code below for Question 1
-```
+![image](https://github.com/user-attachments/assets/a5ebbf4d-94f2-493e-b4f3-6086010439e8)
+
+select *
+from CUSTOMERS
+where SALARY>1500;
 
 **Output:**
 
-![Output1](output.png)
+![image](https://github.com/user-attachments/assets/1cefdd6a-c25e-4f6a-a57c-7a0539ead328)
+
 
 **Question 2**
----
--- Paste Question 2 here
 
-```sql
--- Paste your SQL code below for Question 2
-```
+![image](https://github.com/user-attachments/assets/3e24f76a-6105-40b5-9771-345a8aefbe73)
+
+SELECT student_name, grade
+FROM GRADES
+WHERE (subject,grade)IN (
+    SELECT subject, MAX(grade)
+    FROM GRADES
+    GROUP BY subject
+);
 
 **Output:**
 
-![Output2](output.png)
+![image](https://github.com/user-attachments/assets/d24855a0-fbf9-4e33-8677-5f85e955eb60)
+
 
 **Question 3**
----
--- Paste Question 3 here
 
-```sql
--- Paste your SQL code below for Question 3
-```
+![image](https://github.com/user-attachments/assets/5140688f-a599-4ac8-9296-7645c9f9acc6)
+
+SELECT *
+FROM CUSTOMERS
+WHERE ADDRESS = 'Delhi';
 
 **Output:**
 
-![Output3](output.png)
+![image](https://github.com/user-attachments/assets/310fadb1-1182-41ee-8149-0f195fceb54b)
+
 
 **Question 4**
----
--- Paste Question 4 here
 
-```sql
--- Paste your SQL code below for Question 4
-```
+![image](https://github.com/user-attachments/assets/da7128af-6612-4a2a-a8a9-568e455ac408)
+
+SELECT DISTINCT s.commission
+FROM salesman s
+WHERE s.city='Paris';
 
 **Output:**
 
-![Output4](output.png)
+![image](https://github.com/user-attachments/assets/4d3b2089-41fb-4f96-b02a-e59147d68ce2)
 
 **Question 5**
----
--- Paste Question 5 here
+![image](https://github.com/user-attachments/assets/c44ed3a8-ea3d-4957-aa39-1529a25e14ba)
 
-```sql
--- Paste your SQL code below for Question 5
-```
+SELECT o.ord_no,o.purch_amt,o.ord_date,o.customer_id,o.salesman_id
+FROM orders o
+JOIN salesman s ON o.salesman_id=s.salesman_id
+WHERE s.city='New York';
 
 **Output:**
 
-![Output5](output.png)
+![image](https://github.com/user-attachments/assets/f6f28419-5687-4f5a-863e-30098c32debd)
+
 
 **Question 6**
----
--- Paste Question 6 here
 
-```sql
--- Paste your SQL code below for Question 6
-```
+![image](https://github.com/user-attachments/assets/d809cdc2-7ed8-40a5-a6a2-664493cd6fcf)
+
+SELECT ord_no,purch_amt,ord_date,customer_id,salesman_id
+FROM orders
+WHERE purch_amt > (
+    SELECT AVG(purch_amt)
+    FROM orders
+    WHERE ord_date ='2012-10-10'
+);
 
 **Output:**
 
-![Output6](output.png)
+![image](https://github.com/user-attachments/assets/7b480085-85b7-44a2-96b5-908eba00bcf2)
 
 **Question 7**
----
--- Paste Question 7 here
 
-```sql
--- Paste your SQL code below for Question 7
-```
+![image](https://github.com/user-attachments/assets/d97823f1-8eb3-406b-b110-bdaa6a9bb4c2)
+
+SELECT o.ord_no,o.purch_amt,o.ord_date,o.customer_id,o.salesman_id
+FROM orders o
+JOIN salesman s ON o.salesman_id = s.salesman_id
+WHERE s.city='New York';
 
 **Output:**
 
-![Output7](output.png)
+![image](https://github.com/user-attachments/assets/d533c4d7-f3d4-4de2-8ba6-d65a70a7674c)
+
 
 **Question 8**
----
--- Paste Question 8 here
 
-```sql
--- Paste your SQL code below for Question 8
-```
+![image](https://github.com/user-attachments/assets/b172ba52-41da-4294-97a3-5d2c092b31c1)
+
+SELECT id,name,city,email,phone
+FROM customer WHERE city!=(
+    SELECT city FROM customer
+    WHERE id = (SELECT MAX (id) FROM customer)
+);
 
 **Output:**
 
-![Output8](output.png)
+![image](https://github.com/user-attachments/assets/c62f5938-a2a3-4309-8d6e-b4db6374f4a1)
+
 
 **Question 9**
----
--- Paste Question 9 here
 
-```sql
--- Paste your SQL code below for Question 9
-```
+![image](https://github.com/user-attachments/assets/bb8bbf10-92ac-4d91-97b2-a4e3e79f97c5)
+
+SELECT name
+FROM customer 
+WHERE phone NOT IN(
+     SELECT phone
+     FROM customer 
+     GROUP BY phone
+     HAVING COUNT(phone)>1
+     
+);
 
 **Output:**
 
-![Output9](output.png)
+![image](https://github.com/user-attachments/assets/7db69a76-8508-47de-8ccd-c6a30ed614b4)
+
 
 **Question 10**
----
--- Paste Question 10 here
 
-```sql
--- Paste your SQL code below for Question 10
-```
+![image](https://github.com/user-attachments/assets/df7ad685-2652-4164-9f59-61d77b1ea786)
+
+
+SELECT g.student_id,g.student_name,g.subject,g.grade
+FROM grades g
+WHERE g.grade=(
+    SELECT MAX(grade)
+    FROM grades
+    WHERE subject=g.subject
+);
 
 **Output:**
 
-![Output10](output.png)
+![image](https://github.com/user-attachments/assets/f1cdb138-67e1-413b-8a93-2674dac5ffb8)
 
 
 ## RESULT
