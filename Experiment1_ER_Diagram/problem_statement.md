@@ -48,25 +48,55 @@ Design a database for patient management, appointments, medical records, and bil
 # ER Diagram Submission - Student Name
 
 ## Scenario Chosen:
-University / Hospital (choose one)
+ Hospital 
 
 ## ER Diagram:
-![ER Diagram](er_diagram.png)
+![Screenshot (64)](https://github.com/user-attachments/assets/aa9c46b8-f32a-4a4d-91d2-a85fcebdc0dc)
+
 
 ## Entities and Attributes:
-- Entity1: Attributes
-- Entity2: Attributes
-...
+Patient
+Attributes: Patient_id, Patient_name, DOB, Gender, Address
+Appointment
+Attributes: Token_no, Time
+Doctor
+Attributes: Doctor_id, Doctor_name, Phone_no
+Treatment
+Attributes: Diagnosis, Medicine, Test_result
 
 ## Relationships and Constraints:
-- Relationship1 (Cardinality, Participation)
-- Relationship2 (Cardinality, Participation)
-...
+
+Books (between Patient and Appointment)
+Cardinality: One patient can book many appointments; one appointment is booked by one patient.
+Participation: Total on the side of Appointment (every appointment must be booked), partial on the side of Patient.
+Conducted_by (between Appointment and Doctor)
+Cardinality: One doctor can conduct many appointments; each appointment is conducted by one doctor.
+Participation: Total on the side of Appointment.
+Visit (between Doctor and Treatment)
+Cardinality: A doctor can provide many treatments; each treatment is linked to one doctor.
+Participation: Partial on both ends.
 
 ## Extension (Prerequisite / Billing):
-- Explain how you modeled prerequisites or billing.
+
+There is no direct billing or prerequisite relationship modeled in this ER diagram. However, a billing extension could be introduced as:
+A new Billing entity connected to Treatment, with attributes like Bill_id, Amount, Payment_status, and Date.
+A Requires relationship could be added if modeling prerequisites (e.g., a patient must have a prior test result or referral).
 
 ## Design Choices:
-Brief explanation of why you chose certain entities, relationships, and assumptions
+
+Entity Selection: Entities are chosen based on real-world hospital components — patients, appointments, doctors, and treatments.
+Attributes: Core identifying and descriptive information is included for each entity (e.g., IDs, names, contact details).
+Relationships: The diagram emphasizes the patient journey — from booking an appointment to receiving treatment.
+Assumptions:
+Each appointment is linked to exactly one patient and one doctor.
+Each treatment is associated with one visit by a doctor.
+There is no many-to-many mapping shown between treatments and patients directly — it's inferred via appointments and doctors.
+
 
 ## RESULT
+
+The ER diagram successfully models a basic hospital management system focusing on patient appointments and treatments. It includes the core entities—Patient, Doctor, Appointment, and Treatment—with appropriate attributes and relationships:
+Patients can book appointments, which are conducted by doctors.
+Doctors provide treatments during visits, and each treatment includes diagnosis, medicine, and test results.
+The relationships are logically structured to maintain referential integrity and capture the workflow from appointment to treatment.
+This ER model can serve as the foundational design for implementing a relational database system in a hospital environment, ensuring efficient handling of patient-doctor interactions and treatment records.
